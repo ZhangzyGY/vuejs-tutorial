@@ -1,8 +1,8 @@
 ---
 home: true
-heroImage: https://cn.vuejs.org/images/logo.png
+heroImage: /logo.png
 actionText: 开始 →
-actionLink: /guide/
+actionLink: /guide/introduction
 # features:
 # - title: 简洁至上
 #   details: 以 Markdown 为中心的项目结构，以最少的配置帮助你专注于写作。

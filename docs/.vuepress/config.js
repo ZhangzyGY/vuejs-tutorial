@@ -2,7 +2,7 @@ module.exports = {
   base: '/',
   title: 'Vue.js 入门教程',
   description: 'Vue.js - The Progressive JavaScript Framework',
-  // host: '0.0.0.0',
+  host: '0.0.0.0',
   port: 8080,
   themeConfig: {
     repo: 'lipengzhou/vuejs-tutorial',
@@ -11,7 +11,7 @@ module.exports = {
     editLinks: true,
     editLinkText: '在 GitHub 上编辑此页',
     nav: [
-      { text: '基础', link: '/guide/' },
+      { text: '基础', link: '/guide/introduction' },
       { text: '综合案例', link: '/eshop-admin/' }
     ],
     sidebar: {

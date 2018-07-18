@@ -168,6 +168,34 @@ new Vue({
 
 ---
 
+## 组件通信
+
+![](http://angular.circle.ink/docs/media/891636a0-af23-11e7-b111-4d6e630f480d.png)
+
+
+
+在树形结构里面，组件之间有几种典型的关系：父子关系、兄弟关系、没有直接关系。
+
+相应地，组件之间有以下几种典型的通讯方案：
+
+- 直接的父子关系
+- 直接的父子关系
+- 没有直接关系
+- 利用 cookie 和 localstorage 进行通讯。
+- 利用 session 进行通讯。
+
+
+
+- 父传子 Props Down
+- 子通知父亲 Events Up
+
+- 通过 ref 父亲直接访问子组件
+  - 给子组件起个 ref
+  - 然后在父组件中通过 `this.$refs.子组件ref名`
+- 子组件可以在内部通过 `this.$parent` 直接访问父组件
+- 非父子关系
+  - 事件通信 Events Bus
+
 ## 父子组件通信：Props Down
 
 **1. 在父组件中通过子组件标签属性传递数据**

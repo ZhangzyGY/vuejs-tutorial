@@ -106,6 +106,12 @@ yarn remove 包名
 
 # npm install
 yarn install 或者 yarn
+
+# npm install --global 包名
+yarn global add 包名
+
+# npm uninstall --global 包名
+yarn global remove 包名
 ```
 
 ::: tip
@@ -1996,4 +2002,21 @@ export default {
 ### 编辑商品
 
 ### 删除商品
+
+## 项目打包
+
+- `npm run build`
+- 路由懒加载
+  + 当我们自己写 JavaScript 越来越多的时候，最后打包产出的 app.js 会过大
+  + 好处：第一次加载慢，后续快
+  + 缺点：第一次慢
+  + 如果想解决：
+    * 我们把 JavaScript 文件分散打包运行
+      - 执行到哪里就家在哪个组件对应的 JavaScript 代码
+      - 这样的话会提高首次加载速度
+      - 后续是用到哪个加载哪里
+    * 这里可以利用路由懒加载实现
+- 优化第三方包
+  + cdn
+  + bootcdn.cn
 

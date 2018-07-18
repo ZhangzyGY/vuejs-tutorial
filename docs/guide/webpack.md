@@ -1,5 +1,13 @@
 # webpack
 
+现今的很多网页其实可以看做是功能丰富的应用，它们拥有着复杂的JavaScript代码和一大堆依赖包。为了简化开发的复杂度，前端社区涌现出了很多好的实践方法
+
+模块化，让我们可以把复杂的程序细化为小的文件;
+类似于TypeScript这种在JavaScript基础上拓展的开发语言：使我们能够实现目前版本的JavaScript不能直接使用的特性，并且之后还能转换为JavaScript文件使浏览器可以识别；
+Scss，less等CSS预处理器
+...
+这些改进确实大大的提高了我们的开发效率，但是利用它们开发的文件往往需要进行额外的处理才能让浏览器识别,而手动处理又是非常繁琐的，这就为WebPack类的工具的出现提供了需求。
+
 ## 介绍
 
 - 是什么
@@ -31,8 +39,15 @@
 
 全局安装：
 
-```shell
-npm install --global webpack
+```bash
+npm install --global webpack webpack-cli
+```
+
+查看版本号是否安装成功：
+
+```bash
+# 正常的话应该会看到输出一个版本号
+webpack --version
 ```
 
 准备目录结构：
@@ -62,7 +77,8 @@ foo()
 打包：
 
 ```shell
-webpack main.js bundle.js
+# 默认打包到 dist/main.js 中
+webpack main.js
 ```
 
 `index.html` 文件内容如下：
@@ -116,6 +132,8 @@ npm install --global webpack
 本地安装（推荐）：
 
 ```shell
+# 把工具（webpack、style-loader、less-loader...）相关的依赖项保存到开发依赖
+# 把非工具（vue、axios、vue-router、moment...）正常安装
 npm install --save-dev webpack
 ```
 
@@ -128,9 +146,6 @@ npm install --save-dev webpack
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "a": "node ./src/a.js",
-    "b": "node ./src/b.js",
-    "start": "node ./src/main.js",
     "build": "webpack"
   },
   "keywords": [],
@@ -287,6 +302,10 @@ webpack 不仅可以打包 JavaScript 模块，甚至它把网页开发中的一
 
 ### Loading CSS
 
+> 参考链接：
+>
+> - https://webpack.js.org/guides/asset-management/#loading-css
+
 安装依赖：
 
 ```shell
@@ -360,6 +379,10 @@ module: {
 }
 ```
 
+### Url Loader
+
+> 优化图片打包
+
 ### Loading Fonts
 
 ### Loading Data
@@ -431,6 +454,12 @@ module: {
 }
 ```
 
+> babel 只转换 ECMAScript 6 语法
+>
+> let、const、箭头函数、解构赋值
+>
+> 不会转换 API，例如数组的 find、findIndex、字符串的 startsWith、endsWith
+
 #### 配置 babel-polyfill 来提供低版本浏览器中的不支持 API
 
 安装：
@@ -449,7 +478,7 @@ entry: ['babel-polyfill', './src/main.js'],
 
 #### 配置 transform-runtime 来解决代码重复问题
 
-在打包过程中，babel 会在某给包提供一些工具函数，而这些工具函数可能会重复的出现在多个模块。这样的话就会导报打包体积过大，所以 babel 提供了一个 babel-transform-runtime 来解决这个打包体积过大的问题。
+在打包过程中，babel 会在某个包提供一些工具函数，而这些工具函数可能会重复的出现在多个模块。这样的话就会导报打包体积过大，所以 babel 提供了一个 babel-transform-runtime 来解决这个打包体积过大的问题。
 
 
 
