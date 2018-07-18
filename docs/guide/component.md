@@ -195,6 +195,20 @@ new Vue({
 - 子组件可以在内部通过 `this.$parent` 直接访问父组件
 - 非父子关系
   - 事件通信 Events Bus
+  - Global Bus
+- 集中式状态管理 Vuex
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 父子组件通信：Props Down
 

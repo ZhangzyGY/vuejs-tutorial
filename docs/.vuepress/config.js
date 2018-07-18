@@ -24,6 +24,7 @@ module.exports = {
         'webpack',
         'ajax',
         'vue-router',
+        'vuex',
         'other',
       ]
     }
